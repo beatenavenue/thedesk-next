@@ -68,6 +68,18 @@ pnpm run pack:mas # macOS App Store(Universal)
 
 ```
 
+### Dockerでビルド(Linux)
+
+Linux向けパッケージ(zip, deb)はDockerコンテナ内でビルドできます。手元にNode.jsやpnpmは不要です。
+
+```
+docker build --platform linux/amd64 --output type=local,dest=dist .
+```
+
+成果物は`dist`フォルダに出力されます。
+このコマンドにはBuildKitが必要です。Docker DesktopとDocker Engine 23.0以降では標準で有効です。
+Apple Silicon Macではx64エミュレーションで動くため、時間がかかります。
+
 ### Notarize(macOS)
 
 デフォルトでは公証は行われませんが、あなたの証明書で公証したい場合は`.env.sample`を編集して`.env`にリネームしてください。

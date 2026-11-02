@@ -1,0 +1,27 @@
+# Dependencies and build outputs are created inside the container
+node_modules
+dist
+main
+main-build
+renderer/.next
+renderer/out
+output
+thirdparty.json
+*.tsbuildinfo
+
+# Secrets for signing and notarization must not be sent to the build
+.env
+.env*.local
+*.pem
+*.p8
+*.provisionprofile
+
+# Not needed for the build
+.git
+.github
+.vscode
+.DS_Store
+*.log
+*.tar.gz
+Dockerfile
+.dockerignore
