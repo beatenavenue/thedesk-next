@@ -22,7 +22,7 @@ const Body: React.FC<Props> = (props) => {
 		if (spoilerText.length > 0) {
 			return (
 				<div>
-					{(spoilerReason) && (
+					{(!isAuto || spoilered) && (
 						<div
 							className="spoiler-text"
 							style={Object.assign({ overflowWrap: 'break-word', wordBreak: 'break-word' }, props.style)}
@@ -31,7 +31,7 @@ const Body: React.FC<Props> = (props) => {
 						/>
 					)}
 					<Button size="xs" onClick={() => setSpoilered((current) => !current)}>
-						{spoilerReason ? isAuto ? <FormattedMessage id="timeline.status.showMoreAuto" /> : <FormattedMessage id="timeline.status.showMore" /> : <FormattedMessage id="timeline.status.showLess" />}
+						{spoilered ? isAuto ? <FormattedMessage id="timeline.status.showMoreAuto" /> : <FormattedMessage id="timeline.status.showMore" /> : <FormattedMessage id="timeline.status.showLess" />}
 					</Button>
 				</div>
 			)
