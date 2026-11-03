@@ -69,19 +69,6 @@ pnpm run pack:macX64 #macOS(Intel)
 pnpm run pack:mas # macOS App Store(Universal)
 ```
 
-### Build with Docker (Linux)
-
-You can build the Linux packages (zip and deb) in a Docker container.
-You do not need Node.js or pnpm on your computer.
-
-```
-docker build --platform linux/amd64 --output type=local,dest=dist .
-```
-
-The packages are written to the `dist` folder.
-This command needs BuildKit. It is the default builder in Docker Desktop and in Docker Engine 23.0 or later.
-On Apple Silicon Macs, the build runs in x64 emulation, so it takes longer.
-
 ### Notarize(macOS)
 
 It is currently set to be notarized with the developer's signature. Edit `build/noratize.js` and `.env`
