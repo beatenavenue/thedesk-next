@@ -155,9 +155,9 @@ const actionText = (notification: Entity.Notification, setAccountDetail: (accoun
 
 const Reaction: React.FC<Props> = (props) => {
 	const { formatMessage } = useIntl()
-	const { setReply } = useContext(TheDeskContext)
+	const { setReply, timelineConfig } = useContext(TheDeskContext)
 	const status = props.notification.status
-	const [spoilered, setSpoilered] = useState<boolean>(status.spoiler_text.length > 0)
+	const [spoilered, setSpoilered] = useState<boolean>(status.spoiler_text.length > 0 && timelineConfig.expandCW !== 'yes')
 
 	const refresh = async () => {
 		const res = await props.client.getStatus(status.id)

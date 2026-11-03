@@ -332,6 +332,20 @@ function App() {
 								]}
 								fontSize="1.1em"
 							/>
+							<RadioBoolean
+								label={formatMessage({ id: 'settings.settings.timeline.expandCW.title' })}
+								hint={formatMessage({ id: 'settings.settings.timeline.expandCW.hint' })}
+								value={timelineConfig.expandCW ?? 'no'}
+								onChange={(value) => updateTimeline('expandCW', value)}
+								fontSize="1.1em"
+							/>
+							<RadioBoolean
+								label={formatMessage({ id: 'settings.settings.timeline.showSensitiveMedia.title' })}
+								hint={formatMessage({ id: 'settings.settings.timeline.showSensitiveMedia.hint' })}
+								value={timelineConfig.showSensitiveMedia ?? 'no'}
+								onChange={(value) => updateTimeline('showSensitiveMedia', value)}
+								fontSize="1.1em"
+							/>
 						</Panel>
 						<Panel header={formatMessage({ id: 'settings.settings.timeline.category.tts' })} eventKey={2}>
 							<RadioForm

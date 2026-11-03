@@ -106,7 +106,7 @@ function Post(props: PostProps) {
 	const { timelineConfig } = useContext(TheDeskContext)
 	const isAnimeIcon = timelineConfig.animation === 'yes'
 	const [showReply, setShowReply] = useState(false)
-	const [spoilered, setSpoilered] = useState(status.spoiler_text.length > 0)
+	const [spoilered, setSpoilered] = useState(status.spoiler_text.length > 0 && timelineConfig.expandCW !== 'yes')
 
 	return (
 		<>

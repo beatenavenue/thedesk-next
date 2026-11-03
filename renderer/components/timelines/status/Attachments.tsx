@@ -17,8 +17,8 @@ type Props = {
 }
 
 const Attachments: React.FC<Props> = (props) => {
-	const [sensitive, setSensitive] = useState<boolean>(props.sensitive)
 	const { timelineConfig } = useContext(TheDeskContext)
+	const [sensitive, setSensitive] = useState<boolean>(props.sensitive && timelineConfig.showSensitiveMedia !== 'yes')
 	const changeSensitive = () => {
 		setSensitive((current) => !current)
 	}

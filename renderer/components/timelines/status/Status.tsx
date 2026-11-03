@@ -54,7 +54,9 @@ const Status: React.FC<Props> = (props) => {
 
 	const { formatMessage } = useIntl()
 	const { client } = props
-	const [spoilered, setSpoilered] = useState<boolean>(status.spoiler_text.length > 0 || tooLong)
+	// A post with CW is not collapsed for its length, same as Mastodon and Misskey.
+	const hasCW = status.spoiler_text.length > 0
+	const [spoilered, setSpoilered] = useState<boolean>(hasCW ? timelineConfig.expandCW !== 'yes' : !!tooLong)
 	const [ignoreFilter, setIgnoreFilter] = useState<boolean>(false)
 
 	const toaster = useToaster()

@@ -14,6 +14,8 @@ export type Settings = {
 		max_length: number
 		notification: FormBoolean
 		cropImage: 'cover' | 'contain'
+		expandCW: FormBoolean
+		showSensitiveMedia: FormBoolean
 		ttsProvider: 'system' | 'bouyomi'
 		ttsPort: number
 		ttsPitch: number
@@ -51,6 +53,8 @@ export const defaultSetting: Settings = {
 		max_length: 0,
 		notification: 'yes',
 		cropImage: 'cover',
+		expandCW: 'no',
+		showSensitiveMedia: 'no',
 		ttsProvider: 'system',
 		ttsPort: 50080,
 		ttsPitch: 1,

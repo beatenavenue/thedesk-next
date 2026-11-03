@@ -1,9 +1,10 @@
 import type { Entity } from '@cutls/megalodon'
 import { Icon } from '@rsuite/icons'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { BsPaperclip } from 'react-icons/bs'
 import { Avatar, Badge, Button, FlexboxGrid } from 'rsuite'
 import Time from '@/components/utils/Time'
+import { TheDeskContext } from '@/context'
 import emojify from '@/utils/emojify'
 import Body from '../status/Body'
 
@@ -15,7 +16,8 @@ type Props = {
 const Conversation: React.FC<Props> = (props) => {
 	const { conversation } = props
 	const account = conversation.accounts[0]
-	const [spoilered, setSpoilered] = useState<boolean>(conversation.last_status && conversation.last_status.spoiler_text.length > 0)
+	const { timelineConfig } = useContext(TheDeskContext)
+	const [spoilered, setSpoilered] = useState<boolean>(conversation.last_status && conversation.last_status.spoiler_text.length > 0 && timelineConfig.expandCW !== 'yes')
 
 	return (
 		<div className="conversation">

@@ -163,6 +163,14 @@
 					"title": "How to display attached images",
 					"hint": "Cover crops to fit the column width, Contain displays the whole image regardless of the column width."
 				},
+				"expandCW": {
+					"title": "Always expand content warnings (CW)",
+					"hint": "Even if you choose Yes, you can hide each post with its \"Show less\" button."
+				},
+				"showSensitiveMedia": {
+					"title": "Show sensitive media from the start",
+					"hint": "Even if you choose Yes, you can blur each image with the eye icon at its bottom right."
+				},
 				"ttsPort": " HTTP Port",
 				"ttsPitch": {
 					"title": "Pitch",
